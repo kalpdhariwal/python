@@ -1,0 +1,5 @@
+len_of_square = 20
+area = len_of_square * len_of_square
+perimeter = 4 * len_of_square
+print(area)
+print(perimeter)
