@@ -1,0 +1,3 @@
+kilogram = 4
+grams = kilogram * 1000
+print(grams)
