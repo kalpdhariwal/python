@@ -1,0 +1,6 @@
+principal = 35000
+rate_of_interest = 8.7
+time = 3
+
+interest = (principal * rate_of_interest * time)/100
+print(interest)
