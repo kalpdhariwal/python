@@ -1,0 +1,5 @@
+maths = 75
+science = 80
+english = 95
+avg = (maths + science + english)/3
+print(avg)
