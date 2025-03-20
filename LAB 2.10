@@ -1,5 +1,5 @@
-length =  int(input("enter a length"))
-breadth =  int(input("enter a breadth"))
+length =  int(input("enter length"))
+breadth =  int(input("enter breadth"))
 
 area = length * breadth
 perimiter = 2*(length + breadth)
