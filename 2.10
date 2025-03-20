@@ -1,0 +1,14 @@
+length =  int(input("enter a length"))
+breadth =  int(input("enter a breadth"))
+
+area = length * breadth
+perimiter = 2*(length + breadth)
+
+print("area",area)
+print("perimiter",perimiter)
+
+
+if(area > perimiter):
+          print("the area is greater then perimiter")
+else:
+          print("the area is less then perimiter")
