@@ -35,27 +35,5 @@ class ComplexNumber:
         imaginary_part = (self.imaginary * other.real - self.real * other.imaginary) / denominator
         return ComplexNumber(real_part, imaginary_part)
 
-# Example usage
-if __name__ == "__main__":
-    # Create two complex numbers
-    num1 = ComplexNumber(3, 2)
-    num2 = ComplexNumber(1, 7)
 
-    # Perform operations
-    print(f"num1: {num1}")
-    print(f"num2: {num2}")
-
-    addition = num1.add(num2)
-    print(f"Addition: {addition}")
-
-    subtraction = num1.subtract(num2)
-    print(f"Subtraction: {subtraction}")
-
-    multiplication = num1.multiply(num2)
-    print(f"Multiplication: {multiplication}")
-
-    try:
-        division = num1.divide(num2)
-        print(f"Division: {division}")
-    except ValueError as e:
-        print(e)
+        
