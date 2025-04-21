@@ -1,0 +1,26 @@
+def create_vcard():
+    print("Enter contact details:")
+    name = input("Full Name: ")
+    phone = input("Phone Number: ")
+    email = input("Email (optional): ")
+    org = input("Organization (optional): ")
+
+    # Create vCard content
+    vcard = f"""BEGIN:VCARD
+VERSION:3.0
+FN:{name}
+TEL;TYPE=CELL:{phone}
+EMAIL:{email}
+ORG:{org}
+END:VCARD
+"""
+
+    # Save to file
+    filename = name.replace(" ", "_") + ".vcf"
+    with open(filename, "w", encoding="utf-8") as file:
+        file.write(vcard)
+
+    print(f"\nVCard saved as '{filename}'. You can now import it to your phone.")
+
+# Run the function
+create_vcard()
