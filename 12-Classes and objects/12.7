@@ -1,0 +1,24 @@
+class Weather:
+    def __init__(self, *params):
+        """Initialize Weather object with any number of weather parameters."""
+        self.parameters = list(params)
+
+    def __repr__(self):
+        """String representation of the Weather object."""
+        return f"Weather parameters: {', '.join(self.parameters)}"
+
+    def __contains__(self, item):
+        """Overload the 'in' operator to check if an item exists in the parameters list."""
+        return item in self.parameters
+
+# Example usage
+if __name__ == "__main__":
+    # Create a Weather object with several weather parameters
+    weather1 = Weather("Temperature: 25°C", "Humidity: 80%", "Wind Speed: 15 km/h", "Pressure: 1013 hPa")
+
+    # Print Weather object
+    print(weather1)
+
+    # Check if certain weather parameters are present
+    print(f"\nIs 'Humidity: 80%' in weather parameters? {'Humidity: 80%' in weather1}")
+    print(f"Is 'Rainfall: 0 mm' in weather parameters? {'Rainfall: 0 mm' in weather1}")
