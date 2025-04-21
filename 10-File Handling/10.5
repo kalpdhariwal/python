@@ -1,0 +1,22 @@
+# Define source and destination filenames
+source_file = "source.txt"
+destination_file = "destination.txt"
+
+try:
+    # Open the source file for reading
+    with open(source_file, "r", encoding="utf-8") as src:
+        content = src.read()
+
+    # Convert to uppercase
+    upper_content = content.upper()
+
+    # Write to the destination file
+    with open(destination_file, "w", encoding="utf-8") as dest:
+        dest.write(upper_content)
+
+    print(f"Contents copied from '{source_file}' to '{destination_file}' with all text in uppercase.")
+
+except FileNotFoundError:
+    print(f"Error: '{source_file}' not found.")
+except Exception as e:
+    print(f"An error occurred: {e}")
