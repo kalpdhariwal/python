@@ -1,0 +1,70 @@
+import math
+
+class RegularShape:
+    def __init__(self, shape_type, *dimensions):
+        self.shape_type = shape_type.lower()
+        self.dimensions = dimensions
+
+    def perimeter(self):
+        """Calculate the perimeter/circumference of the shape."""
+        if self.shape_type == 'circle':
+            radius = self.dimensions[0]
+            return 2 * math.pi * radius  # Circumference of circle
+
+        elif self.shape_type == 'square':
+            side = self.dimensions[0]
+            return 4 * side  # Perimeter of square
+
+        elif self.shape_type == 'rectangle':
+            length, width = self.dimensions
+            return 2 * (length + width)  # Perimeter of rectangle
+
+        elif self.shape_type == 'triangle':
+            side = self.dimensions[0]
+            return 3 * side  # Perimeter of equilateral triangle
+
+        else:
+            return "Invalid shape type."
+
+    def area(self):
+        """Calculate the area of the shape."""
+        if self.shape_type == 'circle':
+            radius = self.dimensions[0]
+            return math.pi * radius ** 2  # Area of circle
+
+        elif self.shape_type == 'square':
+            side = self.dimensions[0]
+            return side ** 2  # Area of square
+
+        elif self.shape_type == 'rectangle':
+            length, width = self.dimensions
+            return length * width  # Area of rectangle
+
+        elif self.shape_type == 'triangle':
+            side = self.dimensions[0]
+            return (math.sqrt(3) / 4) * side ** 2  # Area of equilateral triangle
+
+        else:
+            return "Invalid shape type."
+
+# Example usage
+if __name__ == "__main__":
+    # Example for Circle
+    circle = RegularShape('circle', 5)  # radius = 5
+    print(f"Circle Perimeter (Circumference): {circle.perimeter():.2f}")
+    print(f"Circle Area: {circle.area():.2f}")
+
+    # Example for Square
+    square = RegularShape('square', 4)  # side = 4
+    print(f"\nSquare Perimeter: {square.perimeter():.2f}")
+    print(f"Square Area: {square.area():.2f}")
+
+    # Example for Rectangle
+    rectangle = RegularShape('rectangle', 5, 3)  # length = 5, width = 3
+    print(f"\nRectangle Perimeter: {rectangle.perimeter():.2f}")
+    print(f"Rectangle Area: {rectangle.area():.2f}")
+
+    # Example for Triangle (Equilateral)
+    triangle = RegularShape('triangle', 6)  # side = 6
+    print(f"\nTriangle Perimeter: {triangle.perimeter():.2f}")
+    print(f"Triangle Area: {triangle.area():.2f}")
