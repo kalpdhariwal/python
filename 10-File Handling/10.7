@@ -14,30 +14,20 @@ class Employee:
         print(f"Date of Joining: {self.doj}")
         print(f"Salary: {self.salary}")
 
-# File to store serialized data
+
 filename = "employee_data.pkl"
 
-# --- Serialization ---
+
 def serialize_employee(employee):
     with open(filename, 'wb') as file:
         pickle.dump(employee, file)
     print("Employee data serialized successfully.")
 
-# --- Deserialization ---
+
 def deserialize_employee():
     with open(filename, 'rb') as file:
         employee = pickle.load(file)
     print("Employee data deserialized successfully.")
     return employee
 
-# --- Example Usage ---
-if __name__ == "__main__":
-    # Create an Employee object
-    emp = Employee(empcode=101, empname="Alice Smith", doj="2022-03-15", salary=55000)
 
-    # Serialize the object
-    serialize_employee(emp)
-
-    # Deserialize and display the object
-    loaded_emp = deserialize_employee()
-    loaded_emp.display()
