@@ -47,23 +47,6 @@ class RegularShape:
         else:
             return "Invalid shape type."
 
-# Example usage
-if __name__ == "__main__":
-    # Example for Circle
-    circle = RegularShape('circle', 5)  # radius = 5
-    print(f"Circle Perimeter (Circumference): {circle.perimeter():.2f}")
-    print(f"Circle Area: {circle.area():.2f}")
-
-    # Example for Square
-    square = RegularShape('square', 4)  # side = 4
-    print(f"\nSquare Perimeter: {square.perimeter():.2f}")
-    print(f"Square Area: {square.area():.2f}")
-
-    # Example for Rectangle
-    rectangle = RegularShape('rectangle', 5, 3)  # length = 5, width = 3
-    print(f"\nRectangle Perimeter: {rectangle.perimeter():.2f}")
-    print(f"Rectangle Area: {rectangle.area():.2f}")
-
     # Example for Triangle (Equilateral)
     triangle = RegularShape('triangle', 6)  # side = 6
     print(f"\nTriangle Perimeter: {triangle.perimeter():.2f}")
