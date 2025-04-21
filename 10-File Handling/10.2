@@ -1,0 +1,27 @@
+import pandas as pd
+
+# Load Excel file
+filename = "students.xlsx"  # Make sure this file exists in your directory
+df = pd.read_excel(filename)
+
+# Add Total column
+df["Total"] = df[["Sub1", "Sub2", "Sub3"]].sum(axis=1)
+
+# Convert to dictionary
+students_dict = {}
+for index, row in df.iterrows():
+    rollno = row["RollNo"]
+    students_dict[rollno] = {
+        "Name": row["Name"],
+        "Sub1": row["Sub1"],
+        "Sub2": row["Sub2"],
+        "Sub3": row["Sub3"],
+        "Total": row["Total"]
+    }
+
+# Display dictionary data
+for roll, details in students_dict.items():
+    print(f"RollNo: {roll}")
+    for key, value in details.items():
+        print(f"  {key}: {value}")
+    print()
