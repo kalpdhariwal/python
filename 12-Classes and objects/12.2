@@ -1,0 +1,63 @@
+class Matrix:
+    def __init__(self, values):
+        # Ensure the matrix is 3x3
+        if len(values) != 3 or any(len(row) != 3 for row in values):
+            raise ValueError("Matrix must be 3x3.")
+        self.matrix = values
+
+    def __repr__(self):
+        """String representation of the matrix."""
+        return '\n'.join(['\t'.join(map(str, row)) for row in self.matrix])
+
+    def add(self, other):
+        """Matrix addition."""
+        result = [
+            [self.matrix[i][j] + other.matrix[i][j] for j in range(3)]
+            for i in range(3)
+        ]
+        return Matrix(result)
+
+    def multiply(self, other):
+        """Matrix multiplication."""
+        result = [
+            [
+                sum(self.matrix[i][k] * other.matrix[k][j] for k in range(3))
+                for j in range(3)
+            ]
+            for i in range(3)
+        ]
+        return Matrix(result)
+
+    def transpose(self):
+        """Matrix transpose."""
+        result = [
+            [self.matrix[j][i] for j in range(3)]
+            for i in range(3)
+        ]
+        return Matrix(result)
+
+
+# Example usage
+if __name__ == "__main__":
+    matrix1 = Matrix([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+    matrix2 = Matrix([[9, 8, 7], [6, 5, 4], [3, 2, 1]])
+
+    print("Matrix 1:")
+    print(matrix1)
+    print("\nMatrix 2:")
+    print(matrix2)
+
+    # Matrix Addition
+    print("\nAddition (Matrix 1 + Matrix 2):")
+    result_add = matrix1.add(matrix2)
+    print(result_add)
+
+    # Matrix Multiplication
+    print("\nMultiplication (Matrix 1 * Matrix 2):")
+    result_mul = matrix1.multiply(matrix2)
+    print(result_mul)
+
+    # Matrix Transpose
+    print("\nTranspose of Matrix 1:")
+    result_transpose = matrix1.transpose()
+    print(result_transpose)
