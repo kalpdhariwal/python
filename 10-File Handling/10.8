@@ -5,13 +5,13 @@ def remove_articles(source_file, target_file):
         with open(source_file, 'r', encoding='utf-8') as src:
             content = src.read()
 
-        # Use regex to replace 'a', 'an', 'the' with a blank space
+       
         cleaned_content = re.sub(r'\b(a|an|the)\b', ' ', content, flags=re.IGNORECASE)
 
-        # Optional: replace multiple spaces with a single space
+        
         cleaned_content = re.sub(r'\s+', ' ', cleaned_content)
 
-        # Write the cleaned content to the new file
+       
         with open(target_file, 'w', encoding='utf-8') as tgt:
             tgt.write(cleaned_content.strip())
 
@@ -22,5 +22,3 @@ def remove_articles(source_file, target_file):
     except Exception as e:
         print(f"An error occurred: {e}")
 
-# Example usage
-remove_articles("input.txt", "cleaned_output.txt")
