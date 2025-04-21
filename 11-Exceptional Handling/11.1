@@ -1,0 +1,12 @@
+def get_integer():
+    while True:
+        user_input = input("Enter an integer: ")
+        try:
+            value = int(user_input)
+            print(f"Thank you! You entered the integer: {value}")
+            break
+        except ValueError:
+            print("❌ Error: That was not an integer. Please try again.")
+
+# Run the function
+get_integer()
