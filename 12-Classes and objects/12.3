@@ -13,12 +13,12 @@ class Solid:
             return 4 * math.pi * radius ** 2
 
         elif self.shape_type == 'cube':
-            # Surface area of cube = 6 * side^2
+            
             side = self.dimensions[0]
             return 6 * side ** 2
 
         elif self.shape_type == 'cylinder':
-            # Surface area of cylinder = 2 * pi * r * (r + h)
+            
             radius, height = self.dimensions
             return 2 * math.pi * radius * (radius + height)
 
@@ -45,19 +45,4 @@ class Solid:
         else:
             return "Invalid shape type."
 
-# Example usage
-if __name__ == "__main__":
-    # Example for Sphere
-    sphere = Solid('sphere', 5)  # radius = 5
-    print(f"Sphere Surface Area: {sphere.surface_area():.2f}")
-    print(f"Sphere Volume: {sphere.volume():.2f}")
 
-    # Example for Cube
-    cube = Solid('cube', 4)  # side = 4
-    print(f"\nCube Surface Area: {cube.surface_area():.2f}")
-    print(f"Cube Volume: {cube.volume():.2f}")
-
-    # Example for Cylinder
-    cylinder = Solid('cylinder', 3, 7)  # radius = 3, height = 7
-    print(f"\nCylinder Surface Area: {cylinder.surface_area():.2f}")
-    print(f"Cylinder Volume: {cylinder.volume():.2f}")
