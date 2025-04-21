@@ -1,0 +1,46 @@
+class String:
+    def __init__(self, text=""):
+        """Initialize String object with given text."""
+        self.text = text
+
+    def __repr__(self):
+        """String representation of the String object."""
+        return self.text
+
+    def __iadd__(self, other):
+        """Overload the '+=' operator to concatenate strings."""
+        if isinstance(other, String):
+            self.text += other.text
+        elif isinstance(other, str):
+            self.text += other
+        return self
+
+    def toLower(self):
+        """Convert all characters in the string to lowercase."""
+        self.text = self.text.lower()
+
+    def toUpper(self):
+        """Convert all characters in the string to uppercase."""
+        self.text = self.text.upper()
+
+# Example usage
+if __name__ == "__main__":
+    # Create String objects
+    str1 = String("Hello")
+    str2 = String(" World!")
+
+    # Print initial strings
+    print(f"String 1: {str1}")
+    print(f"String 2: {str2}")
+
+    # Concatenate str1 and str2 using '+=' operator
+    str1 += str2
+    print(f"After concatenation: {str1}")
+
+    # Convert str1 to lowercase and print
+    str1.toLower()
+    print(f"After converting to lowercase: {str1}")
+
+    # Convert str1 to uppercase and print
+    str1.toUpper()
+    print(f"After converting to uppercase: {str1}")
