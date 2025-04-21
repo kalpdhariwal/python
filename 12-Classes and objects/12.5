@@ -54,24 +54,3 @@ class Time:
         seconds = total_seconds % 60
         return cls(hours, minutes, seconds)
 
-# Example usage
-if __name__ == "__main__":
-    # Creating time objects
-    time1 = Time(1, 45, 30)  # 1 hour, 45 minutes, 30 seconds
-    time2 = Time(0, 50, 45)  # 0 hours, 50 minutes, 45 seconds
-
-    # Displaying the time objects
-    print(f"Time 1: {time1}")
-    print(f"Time 2: {time2}")
-
-    # Addition of time1 and time2
-    added_time = time1.add(time2)
-    print(f"Time 1 + Time 2: {added_time}")
-
-    # Subtraction of time1 and time2
-    subtracted_time = time1.subtract(time2)
-    print(f"Time 1 - Time 2: {subtracted_time}")
-
-    # Adding time1 to itself
-    added_time_self = time1.add(time1)
-    print(f"Time 1 + Time 1: {added_time_self}")
