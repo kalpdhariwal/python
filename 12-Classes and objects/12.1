@@ -1,0 +1,61 @@
+class ComplexNumber:
+    def __init__(self, real, imaginary):
+        self.real = real
+        self.imaginary = imaginary
+
+    def __repr__(self):
+        """String representation of the complex number."""
+        return f"{self.real} + {self.imaginary}i"
+
+    def add(self, other):
+        """Add two complex numbers."""
+        real_part = self.real + other.real
+        imaginary_part = self.imaginary + other.imaginary
+        return ComplexNumber(real_part, imaginary_part)
+
+    def subtract(self, other):
+        """Subtract two complex numbers."""
+        real_part = self.real - other.real
+        imaginary_part = self.imaginary - other.imaginary
+        return ComplexNumber(real_part, imaginary_part)
+
+    def multiply(self, other):
+        """Multiply two complex numbers."""
+        real_part = self.real * other.real - self.imaginary * other.imaginary
+        imaginary_part = self.real * other.imaginary + self.imaginary * other.real
+        return ComplexNumber(real_part, imaginary_part)
+
+    def divide(self, other):
+        """Divide two complex numbers."""
+        denominator = other.real ** 2 + other.imaginary ** 2
+        if denominator == 0:
+            raise ValueError("Cannot divide by zero.")
+        
+        real_part = (self.real * other.real + self.imaginary * other.imaginary) / denominator
+        imaginary_part = (self.imaginary * other.real - self.real * other.imaginary) / denominator
+        return ComplexNumber(real_part, imaginary_part)
+
+# Example usage
+if __name__ == "__main__":
+    # Create two complex numbers
+    num1 = ComplexNumber(3, 2)
+    num2 = ComplexNumber(1, 7)
+
+    # Perform operations
+    print(f"num1: {num1}")
+    print(f"num2: {num2}")
+
+    addition = num1.add(num2)
+    print(f"Addition: {addition}")
+
+    subtraction = num1.subtract(num2)
+    print(f"Subtraction: {subtraction}")
+
+    multiplication = num1.multiply(num2)
+    print(f"Multiplication: {multiplication}")
+
+    try:
+        division = num1.divide(num2)
+        print(f"Division: {division}")
+    except ValueError as e:
+        print(e)
